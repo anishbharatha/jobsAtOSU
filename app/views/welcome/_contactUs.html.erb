@@ -1,0 +1,30 @@
+<div class='modal fade bs-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+  <div class='modal-dialog model-sm'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+        <h4 class='modal-title' id='exampleModalLabel'>Contact Us</h4>
+      </div>
+
+      <%=form_tag contact_us_path, :method=>'post' do |f|%>
+      <div class='modal-body'>
+          <div class='form-group'>
+            <label for='recipient-name' class='control-label'>*Sender:</label>
+            <%=email_field_tag :email_id, params[:email_id], :class=>'form-control input-xs',
+                               :required=>'true', :placeholder=>'Email Address'%>
+          </div>
+          <div class='form-group'>
+            <label for='message-text' class='control-label'>*Message:</label>
+            <%=text_area :msg, params[:msg], :class=>'form-control', :required=>'true',
+                                :placeholder=>'Type your message here...'%>
+          </div>
+      </div>
+      <div class='modal-footer'>
+        <button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button>
+        <%=submit_tag :'Send', :name=>nil, :class=>'btn btn-sm btn-success'%>
+      </div>
+      <%end%>
+
+    </div>
+  </div>
+</div>

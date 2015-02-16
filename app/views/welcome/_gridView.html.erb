@@ -1,0 +1,31 @@
+<div class='row'>
+  <div class='col-sm-1'><%=link_to "<span class='glyphicon glyphicon-th-list' aria-hidden='true'></span>".html_safe,{:controller=>'welcome', :action=>'change_view',:view=>'list'},
+               :class=>'btn btn-danger btn-sm',:method=>:post%></div>
+  <div class='col-sm-3'>Total <%=@entries.length%> of <%=@entries.count%> Jobs</div>
+  <div class='col-sm-4 pull-right'><%= will_paginate @entries%></div>
+</div>
+
+<%@entries.each do |job| %>
+    <div class='row col-sm-12'>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><b><%=job.title%></b> role with <b><%=job.author%></b></h3>
+        </div>
+
+        <div class="panel-body article">
+          <p class='text-justify'><%=job.content.html_safe%></p>
+          <%=link_to "<button type='button' class='btn btn-xs btn-success'>Open in University Site</button>".html_safe,
+                     job.link, :target=>'_blank'%>
+          <small class='pull-right'>Posted <%=job.created_at%></small>
+        </div>
+      </div>
+    </div>
+
+    <div class='col-sm-1'></div>
+<%end%>
+<script>
+    $('.article').readmore({
+        speed: '200',
+        lessLink: '<a href="#">Read less</a>'
+    });
+</script>

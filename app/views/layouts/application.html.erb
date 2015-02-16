@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jobsatosu</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico'%>
+  <link href='https://fonts.googleapis.com/css?family=Exo+2:900italic,400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:1000,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<marquee><b class='alert-danger'><span class='glyphicon glyphicon-warning-sign'></span> THIS IS NOT A PRODUCTION SITE.
+  <span class='glyphicon glyphicon-exclamation-sign'></span>STRICTLY BUILD FOR DEMO PURPOSES ONLY.</b></marquee>
+
+    <div class='container'>
+      <div class='row col-sm-8 heading'>
+        <%=link_to '<h2>JOBSAT</h2><h2 class=\'osu\'>OSU</h2>'.html_safe, root_url%>
+        <p class='caption'>100 Best Adoption Friendly Workplaces -2014</p>
+      </div>
+      <div class='col-sm-4' style='margin-top: 20px;'>
+        <a href='https://plus.google.com/+ohiostateuniversity/about' target='_blank' title='Google Plus'>
+          <%= image_tag 'googleplus-64.png', :class=>'social', :width=>'50'%>
+        </a>
+        <a href='https://www.facebook.com/osu' target='_blank' title='Facebook'>
+          <%= image_tag 'facebook-64.png', :class=>'social', :width => '50'%>
+        </a>
+        <a href='https://twitter.com/ohiostate' target='_blank' title='Twitter'>
+          <%= image_tag 'twitter-64.png', :class=>'social', :width => '50'%>
+        </a>
+        <a href='https://www.youtube.com/user/OhioStateUniversity' target='_blank' title='Youtube'>
+          <%= image_tag 'youtube-64.png', :class=>'social', :width=>'50'%>
+        </a>
+        <a href='https://www.linkedin.com/edu/the-ohio-state-university-19133' target='_blank' title='LinkedIn'>
+          <%= image_tag 'linkedin-64.png', :class=>'social', :width=>'50'%>
+        </a>
+        <a href='#' alt='Contact Us' title='Contact Us' data-toggle='modal' data-target='.bs-example-modal-sm'>
+          <%= image_tag 'email-64.png', :class=>'social', :width=>'50', :alt=>'Contact Us'%>
+        </a>
+      </div>
+
+      <%=render 'welcome/contactUs'%>
+
+  <div class='row col-sm-12'>
+    <% flash.each do |key, value| %>
+      <div class='alert alert-<%= key %> alert-dismissible'><%= value %>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+      </div>
+    <% end %>
+  </div>
+  <div class='row'>
+    <%render 'welcome/searchBlock'%>
+  </div>
+
+    <%= yield %>
+
+  <div class='row col-sm-12 text-center'>
+    <p>Developed by ABB.</p>
+  </div>
+    </div>
+</body>
+</html>

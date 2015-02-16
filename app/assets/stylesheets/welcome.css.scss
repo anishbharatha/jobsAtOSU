@@ -1,0 +1,20 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//colors
+$color_abbey_approx: #4d4e50;
+
+.job_title {
+  font-weight: 500;
+  color: $color_abbey_approx;
+  font-size: 1.2em;
+}
+.job_author {
+  font-weight: 200;
+  font-size: 1em;
+}
+th a {
+  color: $color_abbey_approx;
+  font-size: 1.3em;
+  font-weight: 600;
+}
