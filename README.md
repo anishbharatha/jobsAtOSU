@@ -2,7 +2,7 @@
 
 Job portal application developed in Ruby on Rails.
 This web app is built to strictly demonstrate jobs/careers at Ohio State University, Columbus, OH.
-The same application is hosted and running in <i>Cloud Application Platform, Heroku</i> at <a href="https://sheltered-sierra-1264.herokuapp.com">JobsAtOSU</a>
+The same application is hosted and running in <i>Cloud Application Platform, Heroku</i> at <a href="https://sheltered-sierra-1264.herokuapp.com" target="_blank">JobsAtOSU</a>
 
 Features:
    * <b>Sorting</b> the job position & department alphabetically and posted date chronologically
