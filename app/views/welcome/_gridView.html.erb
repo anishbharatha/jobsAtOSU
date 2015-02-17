@@ -7,16 +7,24 @@
 
 <%@entries.each do |job| %>
     <div class='row col-sm-12'>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><b><%=job.title%></b> role with <b><%=job.author%></b></h3>
+      <div class='panel panel-default'>
+        <div class='panel-heading'>
+          <h3 class='panel-title'><b><%=job.title%></b> role with <b><%=job.author%></b></h3>
         </div>
 
-        <div class="panel-body article">
+        <div class='panel-body article'>
           <p class='text-justify'><%=job.content.html_safe%></p>
           <%=link_to "<button type='button' class='btn btn-xs btn-success'>Open in University Site</button>".html_safe,
                      job.link, :target=>'_blank'%>
-          <small class='pull-right'>Posted <%=job.created_at%></small>
+          <small class='pull-right'>
+            <p><span class='st_facebook'></span>
+              <span class='st_twitter'></span>
+              <span class='st_linkedin'></span>
+              <span class='st_email'></span>
+                Posted <%=job.created_at%>
+              <%if job.updated_at.to_s!=job.created_at.to_s%> and Updated at<%=job.updated_at%><%end%>
+            </p>
+          </small>
         </div>
       </div>
     </div>

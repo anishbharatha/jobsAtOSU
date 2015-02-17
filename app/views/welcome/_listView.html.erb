@@ -21,7 +21,7 @@
         <td><%#=job.id%></td>
         <td><a data-toggle='modal' data-target='#<%=job.id%>' href='#' class='job_title'><%=job.title%></a></td>
         <td class='job_author'><%=job.author%></td>
-        <td><small><%=Time.new(job.created_at.to_i).strftime('%b %d %a %Y %Z')%></small>
+        <td><small><%=job.created_at%></small>
           <%if job.updated_at.to_s!=job.created_at.to_s%>
               Updated at<%=job.updated_at%>
           <%end%>

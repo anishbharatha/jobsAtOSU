@@ -3,8 +3,8 @@ class Jobs < ActiveRecord::Base
 
   # Model self callable method to update the data from atom feed
   def self.update_from_feed(feed_url)
+    Jobs.delete_all
     feed = Feedjira::Feed.fetch_and_parse(feed_url)
-    Jobs.validate_from_feed(feed)
     feed.entries.each do |entry|
       unless exists? :id=>entry.id
         create!(
@@ -22,8 +22,6 @@ class Jobs < ActiveRecord::Base
 
   # Method to validate the existing data/jobs with the latest atom feed
   def self.validate_from_feed(new_feed)
-    Rails.logger.debug '*******VALIDATING FEED'
-    curr_feed = Jobs.all
-    Rails.logger.debug 'VALIDATION LOGIC'
+    Jobs.delete_all
   end
 end
