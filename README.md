@@ -11,8 +11,8 @@ Features:
    * Email any job posting to the provided Email id
 
 Gems used:
-   * Feedjira to fetch and parse the ATOM feed from OSU jobs portal
-   * Sendgrid for implementing the Email feature
-   * Bootstrap for responsiveness and pretty UI
-   * Pagination for arranging the jobs/search results for easy browsing
-   * And few other gems for supporting the SASS code, database, etc
+   * Feedjira-1.6.0 to fetch and parse the ATOM feed from OSU jobs portal
+   * Sendgrid-1.2.0 for implementing the Email feature
+   * Bootstrap-sass-3.3.3 for responsiveness and pretty UI
+   * Will-pagination-3.0.7 for arranging the jobs/search results for easy browsing
+   * And few other gems (sass-rails, rails, pg, jquery-rails) for supporting the SASS code, database, etc
