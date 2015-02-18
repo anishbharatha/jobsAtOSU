@@ -15,5 +15,6 @@
 /log/*.log
 /tmp
 
-#Ignore the database config file
+#Ignore the idea and database config file
+.idea
 config/database.yml
